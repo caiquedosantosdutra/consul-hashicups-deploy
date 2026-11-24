@@ -1,0 +1,19 @@
+global:
+  enabled: true
+  name: consul
+  datacenter: dc1
+  image: hashicorp/consul:2.0.4
+  tls:
+    enabled: true
+  acls:
+    manageSystemACLs: true
+server:
+  enabled: true
+  storageClass: gp3
+  replicas: 3
+ui:
+  enabled: true
+  service:
+    type: LoadBalancer
+connectInject:
+  enabled: true
